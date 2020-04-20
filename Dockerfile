@@ -1,5 +1,5 @@
-FROM jupyter/datascience-notebook:584e9ab39d22
-
+#FROM jupyter/datascience-notebook:584e9ab39d22
+FROM jupyter/scipy-notebook:4609df0afbf3
 RUN pip install BM25
 RUN pip install 'plotly==4.4.1'
 
