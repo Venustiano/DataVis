@@ -1,3 +1,2 @@
-FROM jupyter/base-notebook:e4adc8fdf731
-
+FROM jupyter/base-notebook:997ef7c6d1eb
 RUN PIP install BM25
