@@ -12,3 +12,5 @@ RUN export NODE_OPTIONS=--max-old-space-size=4096 &&\
     jupyter labextension install plotlywidget@4.6.0 --no-build &&\
     jupyter lab build &&\
     unset NODE_OPTIONS
+
+COPY ./tests/testDocker.ipynb /home/$NB_USER/work
