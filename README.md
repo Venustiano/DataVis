@@ -1,7 +1,8 @@
 # DataVis
 
 
-[Open a container in Jupyter notebook](https://mybinder.org/v2/gh/Venustiano/DataVis/master){:target="_blank"}
+
+<a href="https://mybinder.org/v2/gh/Venustiano/DataVis/masterx" target="_blank">Open a container in Jupyter notebook</a>
 
 
-[Open a container in Jupyter lab](https://mybinder.org/v2/gh/Venustiano/DataVis/master?urlpath=lab){:target="_blank"}
+<a href="https://mybinder.org/v2/gh/Venustiano/DataVis/master?urlpath=lab" target="_blank">Open a container in Jupyter lab</a>
