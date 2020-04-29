@@ -35,4 +35,4 @@ RUN export NODE_OPTIONS=--max-old-space-size=4096 &&\
     jupyter lab build &&\
     unset NODE_OPTIONS
 
-COPY ./slides/* /home/$NB_USER/work/
+COPY ./slides /home/$NB_USER/work/
