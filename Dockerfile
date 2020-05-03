@@ -12,7 +12,7 @@ USER $NB_USER
 RUN conda install -y -c conda-forge cufflinks-py \
     rise \
     poppler
-RUN R -e "install.packages('tikzDevice',dependencies=TRUE, repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages(c('tikzDevice','GGally','plotly'),dependencies=TRUE, repos='http://cran.rstudio.com/')"
 
 USER root
 
