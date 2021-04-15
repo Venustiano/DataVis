@@ -1,0 +1,33 @@
+FROM rocker/rstudio
+
+RUN apt update && \
+	apt install -y libudunits2-dev \
+	libgdal-dev \
+	libgeos-dev \
+	libproj-dev
+
+RUN install2.r  --error \
+	-r "https://cran.rstudio.com" \
+	-r "http://www.bioconductor.org/packages/release/bioc" \
+	colorspace \
+	knitr \
+	png \
+	tikzDevice \
+	forcats \
+	ggplot2movies \
+	base64enc \
+	htmltools \
+	jsonlite \
+	rmarkdown \
+	tinytex \
+	scales \
+	sf \
+	bookdown \
+	remotes \
+	FactoMineR \
+	tidymodels \
+	vcd
+
+RUN R -e "remotes::install_github('wilkelab/cowplot')"
+RUN R -e "remotes::install_github('clauswilke/colorblindr')"
+RUN R -e "remotes::install_github('clauswilke/dviz.supp')"
