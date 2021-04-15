@@ -4,7 +4,8 @@ RUN apt update && \
 	apt install -y libudunits2-dev \
 	libgdal-dev \
 	libgeos-dev \
-	libproj-dev
+	libproj-dev \
+	libxt6
 
 RUN install2.r  --error \
 	-r "https://cran.rstudio.com" \
