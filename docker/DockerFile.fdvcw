@@ -28,6 +28,7 @@ RUN install2.r  --error \
 	tidymodels \
 	vcd
 
+
 RUN R -e "remotes::install_github('wilkelab/cowplot')"
 RUN R -e "remotes::install_github('clauswilke/colorblindr')"
 RUN R -e "remotes::install_github('clauswilke/dviz.supp')"
