@@ -10,26 +10,129 @@ RUN apt update && \
 RUN install2.r  --error \
 	-r "https://cran.rstudio.com" \
 	-r "http://www.bioconductor.org/packages/release/bioc" \
-	colorspace \
-	knitr \
-	png \
-	tikzDevice \
+	nycflights13 \
+	gapminder \
+	RColorBrewer \
+	gganimate \
+	emmeans \
+	mgcv \
+	nlme \
+	broom \
+	tidybayes \
+	maps \
+	statebins \
+	sf \
+	maptools \
+	sp \
+	rgeos \
+	ggspatial \
+	geofacet \
+#	plot3D \
+#	magick \
+	hexbin \
+	treemapify \
+	gridExtra \
+	ggmap \
+	ggthemes \
+	ggridges \
+	ggrepel \
+	ggforce \
+	patchwork \
+	lubridate \
 	forcats \
+	stringr \
+	purrr \
+	readr \
+	tidyr \
+	tibble \
+	tidyverse \
+	dplyr \
+	ggplot2 \
+	colorspace \
+	rjson \
+	class \
+	rprojroot \
+	estimability \
+	ggstance \
+	rstudioapi \
+	farver \
+	ggfittext \
+	svUnit \
+	mvtnorm \
+	xml2 \
+	knitr \
+	polyclip \
+	jsonlite \
+	png \
+	httr \
+	backports \
+	assertthat \
+	Matrix \
+	lazyeval \
+	cli \
+	tweenr \
+	prettyunits \
+	htmltools \
+#	misc3d \
+	coda \
+	gtable \
+	glue \
+	Rcpp \
+	cellranger \
+	imguR \
+	xfun \
+	rvest \
+	MASS \
+	scales \
+	hms \
+	yaml \
+	stringi \
+	e1071 \
+	spData \
+	RgoogleMaps \
+	rlang \
+	pkgconfig \
+	bitops \
+	geogrid \
+	evaluate \
+	lattice \
+	tidyselect \
+	plyr \
+	magrittr \
+	R6 \
+	generics \
+	DBI \
+	pillar \
+	haven \
+	foreign \
+	withr \
+	units \
+	modelr \
+	crayon \
+	arrayhelpers \
+	progress \
+	jpeg \
+	rnaturalearth \
+	readxl \
+	digest \
+	classInt \
+	xtable \
+	munsell \
 	ggplot2movies \
 	base64enc \
-	htmltools \
-	jsonlite \
 	rmarkdown \
 	tinytex \
 	scales \
-	sf \
 	bookdown \
 	remotes \
 	FactoMineR \
-	tidymodels \
-	vcd
+	tidymodels # \
+#	vcd
 
 
-RUN R -e "remotes::install_github('wilkelab/cowplot')"
-RUN R -e "remotes::install_github('clauswilke/colorblindr')"
-RUN R -e "remotes::install_github('clauswilke/dviz.supp')"
+RUN installGithub.r wilkelab/cowplot \
+    clauswilke/colorblindr \
+    clauswilke/dviz.supp \
+    clauswilke/ungeviz \
+    clauswilke/ggtextures \
+    DavisVaughan/strapgod
