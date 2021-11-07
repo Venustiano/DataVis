@@ -5,7 +5,9 @@ RUN apt update && \
 	libgdal-dev \
 	libgeos-dev \
 	libproj-dev \
-	libxt6
+	libmagick++-dev \
+	libxt6 \
+	tk
 
 RUN install2.r  --error \
 	-r "https://cran.rstudio.com" \
@@ -27,11 +29,13 @@ RUN install2.r  --error \
 	rgeos \
 	ggspatial \
 	geofacet \
-#	plot3D \
-#	magick \
+	misc3d \
+	plot3D \
+	magick \
 	hexbin \
 	treemapify \
 	gridExtra \
+	rworldmap \
 	ggmap \
 	ggthemes \
 	ggridges \
@@ -73,7 +77,6 @@ RUN install2.r  --error \
 	tweenr \
 	prettyunits \
 	htmltools \
-#	misc3d \
 	coda \
 	gtable \
 	glue \
@@ -126,13 +129,22 @@ RUN install2.r  --error \
 	bookdown \
 	remotes \
 	FactoMineR \
-	tidymodels # \
-#	vcd
+	tidymodels \
+	vcd \
+	lwgeom
 
+RUN sed -i 's/256MiB/2GiB/' /etc/ImageMagick-6/policy.xml
 
-RUN installGithub.r wilkelab/cowplot \
-    clauswilke/colorblindr \
-    clauswilke/dviz.supp \
-    clauswilke/ungeviz \
-    clauswilke/ggtextures \
-    DavisVaughan/strapgod
+# RUN installGithub.r wilkelab/cowplot \
+#     clauswilke/colorblindr \
+#     clauswilke/dviz.supp \
+#     clauswilke/ungeviz \
+#     clauswilke/ggtextures \
+#     DavisVaughan/strapgod
+
+RUN R -e "remotes::install_github('wilkelab/cowplot')"
+RUN R -e "remotes::install_github('clauswilke/colorblindr')" 
+RUN R -e "remotes::install_github('clauswilke/dviz.supp')"
+RUN R -e "remotes::install_github('wilkelab/ungeviz')"
+RUN R -e "remotes::install_github('clauswilke/ggtextures')"
+RUN R -e "remotes::install_github('DavisVaughan/strapgod')"
