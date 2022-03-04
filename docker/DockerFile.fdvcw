@@ -131,7 +131,8 @@ RUN install2.r  --error \
 	FactoMineR \
 	tidymodels \
 	vcd \
-	lwgeom
+	lwgeom \
+	gridGraphics
 
 RUN sed -i 's/256MiB/2GiB/' /etc/ImageMagick-6/policy.xml
 
