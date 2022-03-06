@@ -128,11 +128,14 @@ RUN install2.r  --error \
 	scales \
 	bookdown \
 	remotes \
-	FactoMineR \
+#	FactoMineR \
 	tidymodels \
 	vcd \
 	lwgeom \
-	gridGraphics
+    gridGraphics \
+    caret
+
+RUN R -e "install.packages(c('FactoMineR'))"
 
 RUN sed -i 's/256MiB/2GiB/' /etc/ImageMagick-6/policy.xml
 
