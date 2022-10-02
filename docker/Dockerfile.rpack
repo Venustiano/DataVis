@@ -1,0 +1,9 @@
+FROM datavis:base-4.2.1
+
+RUN R -e "devtools::install_github('Venustiano/testpackage');"
+
+COPY cm_plots.R /app/bin/
+WORKDIR /app/data/
+
+ENTRYPOINT ["Rscript","/app/bin/cm_plots.R"]
+CMD ["histogram","help"]
